@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Phantasia&#39;s Blog</title>
   
   
   <link href="https://phantasiawo.github.io/atom.xml" rel="self"/>
   
   <link href="https://phantasiawo.github.io/"/>
-  <updated>2022-05-07T14:00:13.637Z</updated>
+  <updated>2022-05-07T14:06:04.286Z</updated>
   <id>https://phantasiawo.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>PhantasiaOwO</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="https://phantasiawo.github.io/2022/05/07/Git-Introduction/"/>
     <id>https://phantasiawo.github.io/2022/05/07/Git-Introduction/</id>
     <published>2022-05-07T12:02:46.000Z</published>
-    <updated>2022-05-07T14:00:13.637Z</updated>
+    <updated>2022-05-07T14:06:04.286Z</updated>
     
     
       

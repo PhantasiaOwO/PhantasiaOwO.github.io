@@ -31,7 +31,7 @@
 <p>选择远程分支的main</p>
 <p><img src="/2022/05/07/Git-Introduction/branch-new-remote.png"></p>
 <p>完成后即可删除本地和远程的分支master</p>
-<h1 id="必要文件"><a href="#必要文件" class="headerlink" title="必要文件"></a>必要文件</h1><h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>此文件用于设定提交时忽略的文件，如.vs .idea等开发环境自动生成的文件</p>
+<h1 id="命令行配置"><a href="#命令行配置" class="headerlink" title="命令行配置"></a>命令行配置</h1><h1 id="必要文件"><a href="#必要文件" class="headerlink" title="必要文件"></a>必要文件</h1><h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>此文件用于设定提交时忽略的文件，如.vs .idea等开发环境自动生成的文件</p>
 <p>可以直接前往<a href="https://github.com/github/gitignore">Github-Gitignore</a>下载到常用的配置文件并整合生成自己的配置文件</p>
 <h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>markdown文件，用于描述仓库的相关信息</p>
 ]]></content>
