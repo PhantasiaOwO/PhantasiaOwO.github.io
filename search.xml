@@ -40,57 +40,6 @@
       </tags>
   </entry>
   <entry>
-    <title>CSharp_Comparison_Delegate</title>
-    <url>/2022/05/04/Comparison%E5%A7%94%E6%89%98%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%882022.5.3LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%89/</url>
-    <content><![CDATA[<h1 id="Comparison委托的使用（2022-5-3LeetCode每日一题）"><a href="#Comparison委托的使用（2022-5-3LeetCode每日一题）" class="headerlink" title="Comparison委托的使用（2022.5.3LeetCode每日一题）"></a>Comparison委托的使用（2022.5.3LeetCode每日一题）</h1><h2 id="委托简介"><a href="#委托简介" class="headerlink" title="委托简介"></a>委托简介</h2><p>Comparison委托可以用于以特定规则排序集合</p>
-<h2 id="Comparison详解"><a href="#Comparison详解" class="headerlink" title="Comparison详解"></a>Comparison详解</h2><p>声明</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public delegate int Comparison&lt;T&gt;(T x, T y);</span><br></pre></td></tr></table></figure>
-
-<p>返回值</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&lt; 0</td>
-<td>x &lt; y</td>
-</tr>
-<tr>
-<td>0</td>
-<td>x &#x3D; y</td>
-</tr>
-<tr>
-<td>&gt; 0</td>
-<td>x &gt; y</td>
-</tr>
-</tbody></table>
-<h2 id="每日一题"><a href="#每日一题" class="headerlink" title="每日一题"></a>每日一题</h2><blockquote>
-<p>给你一个日志数组 <code>logs</code>。每条日志都是以空格分隔的字串，其第一个字为字母与数字混合的 <strong>标识符</strong>。<br>如：”log1 123 456”</p>
-<p>有两种不同类型的日志：</p>
-<p><strong>字母日志</strong>：除标识符之外，所有字均由小写字母组成<br><strong>数字日志</strong>：除标识符之外，所有字均由数字组成<br>请按下述规则将日志重新排序：</p>
-<p>所有 <strong>字母日志</strong> 都排在 <strong>数字日志</strong> 之前。<br><strong>字母日志</strong> 在内容不同时，忽略标识符后，按内容字母顺序排序；在内容相同时，按标识符排序。<br><strong>数字日志</strong> 应该保留原来的相对顺序。<br>返回日志的最终顺序。</p>
-</blockquote>
-<p>思路：</p>
-<ol>
-<li>自定义一个类Pair用于存储字符串<code>Log</code>和原位置的序号<code>Index</code></li>
-<li>使用Comparison委托完成题干要求的比较规则<ol>
-<li>数字日志的相对大小保持，则保持相对位置：通过<code>Index</code>提供Comparison委托的返回值</li>
-<li>字母日志则是字典序排序</li>
-</ol>
-</li>
-</ol>
-<p>抄的代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public string[] ReorderLogFiles(string[] logs)</span><br><span class="line">    &#123;</span><br><span class="line">        // 自定义类进行重定向（需要同时使用到string和Indexer）</span><br><span class="line">        var pairs = new Pair[logs.Length];</span><br><span class="line"></span><br><span class="line">        for (int i = 0; i &lt; logs.Length; i++) pairs[i] = new Pair(logs[i], i);</span><br><span class="line"></span><br><span class="line">        // Sort方法配合Comparison实现题干要求的排序</span><br><span class="line">        Array.Sort(pairs, ((pair, pair1) =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            // 定位到标识符后</span><br><span class="line">            var pos = pair.Str.IndexOf(&#x27; &#x27;) + 1;</span><br><span class="line">            var pos1 = pair1.Str.IndexOf(&#x27; &#x27;) + 1;</span><br><span class="line">            var isDigit = char.IsDigit(pair.Str[pos]);</span><br><span class="line">            var isDigit1 = char.IsDigit(pair1.Str[pos1]);</span><br><span class="line"></span><br><span class="line">            // 具体的排序</span><br><span class="line">            // 两个数字日志保持相对次序</span><br><span class="line">            // 必须使用Indexer计算相对位置，因为无法保证调用的排序算法的规则</span><br><span class="line">            // 如果是逆序搜索，将会导致无法保证数字日志仍是原顺序</span><br><span class="line">            if (isDigit &amp;&amp; isDigit1) return pair.Index - pair1.Index;</span><br><span class="line">            else if (isDigit || isDigit1) return isDigit ? 1 : -1;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                var subStr = pair.Str.Substring(pos);</span><br><span class="line">                var subStr1 = pair1.Str.Substring(pos1);</span><br><span class="line"></span><br><span class="line">                var compare = string.Compare(subStr, subStr1);</span><br><span class="line">                return compare == 0 ? string.Compare(pair.Str, pair1.Str) : compare;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;));</span><br><span class="line"></span><br><span class="line">        var res = new string[logs.Length];</span><br><span class="line">        for (int i = 0; i &lt; logs.Length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            res[i] = pairs[i].Str;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private class Pair</span><br><span class="line">    &#123;</span><br><span class="line">        public string Str &#123; get; private set; &#125;</span><br><span class="line">        public int Index &#123; get; private set; &#125;</span><br><span class="line"></span><br><span class="line">        public Pair(string str, int index)</span><br><span class="line">        &#123;</span><br><span class="line">            Str = str;</span><br><span class="line">            Index = index;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Comparison委托的使用（2022.5.3LeetCode每日一题）</title>
     <url>/2022/05/04/CSharp-Comparison-Delegate/</url>
     <content><![CDATA[<h1 id="委托简介"><a href="#委托简介" class="headerlink" title="委托简介"></a>委托简介</h1><p>Comparison委托可以用于以特定规则排序集合</p>
