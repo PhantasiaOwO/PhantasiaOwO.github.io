@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html lang="zh-CN">
+<html lang="en">
   
 
     <head>
@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title> Phantsia&#39;s Blog</title>
+      <title> Hexo</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -41,7 +41,7 @@
           font-size: 1.6rem;
         }
       </style>
-    <link rel="alternate" href="/atom.xml" title="Phantsia's Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
 </head>
   </html>
 </html>
@@ -65,10 +65,10 @@
       <img src="/images/cover1.jpg" alt="image frame" />
     </div>
     <div class="cover-inner text-center text-white">
-      <h1><a href="/">Phantsia&#39;s Blog</a></h1>
+      <h1><a href="/">Hexo</a></h1>
       <div id="subtitle-box">
         
-        <span id="subtitle"></span>
+          <span id="subtitle">技术宅拯救世界</span>
         
       </div>
       <div>
@@ -83,40 +83,17 @@
 
 
 
-<script src="https://cdn.staticfile.org/typed.js/2.0.12/typed.min.js"></script>
-
 
 <!-- Subtitle -->
 
-  <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
-        startDelay: 0,
-        typeSpeed: 200,
-        loop: true,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
-  </script>
-  
 <div id="main">
   <section class="outer">
   
   <ul class="ads">
     
         <li>
-            <a target="_blank" rel="noopener" href="https://curl.qcloud.com/kvO7hb43">
-                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5ccc.jpg" width="300" alt="云服务器限时秒杀">
-            </a>
-        </li>
-    
-        <li>
-            <a target="_blank" rel="noopener" href="https://www.vultr.com/?ref=8630075">
-                <img src="https://pic.imgdb.cn/item/62174b452ab3f51d912a5cd7.png" width="300" alt="vultr优惠vps">
+            <a href="">
+                <img src="" width="" alt="">
             </a>
         </li>
     
@@ -171,7 +148,7 @@
     
     
     <article
-  id="post-CSharp-Comparison-Delegate"
+  id="post-Git-Introduction"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -182,7 +159,86 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2022/05/04/CSharp-Comparison-Delegate/"
+  <a class="article-title" href="/2022/05/07/Git-Introduction/"
+    >Git配置笔记</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/07/Git-Introduction/" class="article-date">
+  <time datetime="2022-05-07T12:02:46.000Z" itemprop="datePublished">2022-05-07</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="创建远程仓库-Github"><a href="#创建远程仓库-Github" class="headerlink" title="创建远程仓库(Github)"></a>创建远程仓库(Github)</h1><p>GitHub中，找到右上角的加号，选择 <strong>New repository</strong> ，完成如下条目<br>1.	给仓库命名<br>2.	设置仓库说明（可选）<br>3.	选择访问权限<br>4.	添加README.md（可选）<br>5.	<code>.gitignore</code>的配置（可选）<br>6.	选择开源协议（小型项目可以忽略）</p>
+<p>完成以上的项目之后即可点击最下方的创建按钮完成创建</p>
+<h1 id="图形界面配置-VS2022"><a href="#图形界面配置-VS2022" class="headerlink" title="图形界面配置(VS2022)"></a>图形界面配置(VS2022)</h1><h2 id="配置Git-config"><a href="#配置Git-config" class="headerlink" title="配置Git-config"></a>配置Git-config</h2><p>在顶部菜单选择Git-Settings</p>
+<p><img src="/2022/05/07/Git-Introduction/homepage.png"></p>
+<p>在Visual Studio设置界面即可输入git配置信息<br><strong>注意：选择的条目是Git Global Settings</strong></p>
+<p><img src="/2022/05/07/Git-Introduction/settings.bmp"></p>
+<p>填写完成后可以生成SSH-key，这样就可以使用SSH协议访问远程仓库了</p>
+<p>首先前往目录<code>C://Users//User_Name//.ssh</code>查看是否拥有密钥</p>
+<p>如果没有，可以使用以下命令手动生成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;&lt;Email-Address&gt;&quot;</span><br></pre></td></tr></table></figure>
+
+<p>前往目录<code>C://Users//User_Name//.ssh//id_rsa.pub</code>获取公钥</p>
+<p>前往远程仓库的用户设置，找到<code>SSH &amp; GPG Keys</code>条目</p>
+<p><img src="/2022/05/07/Git-Introduction/ssh.bmp"></p>
+<p>在<code>SSH Keys</code>里添加刚才找到的公钥</p>
+<p><img src="/2022/05/07/Git-Introduction/ssh-add.bmp"></p>
+<p>点击完成即可</p>
+<h2 id="创建本地仓库并建立连接"><a href="#创建本地仓库并建立连接" class="headerlink" title="创建本地仓库并建立连接"></a>创建本地仓库并建立连接</h2><p>选择顶部菜单中的Create Git Repository</p>
+<p><img src="/2022/05/07/Git-Introduction/create.bmp"></p>
+<p>填写完成后将会自动执行一次push</p>
+<p><strong>由于远程仓库主分支名称使用的是main而VS默认使用的是master，因此在初次上传后会有pull request的提示</strong></p>
+<p>进入分支管理</p>
+<p><img src="/2022/05/07/Git-Introduction/branch.png"></p>
+<p>重新创建分支引用远程仓库的main</p>
+<p><img src="/2022/05/07/Git-Introduction/branch-new.png"></p>
+<p>选择远程分支的main</p>
+<p><img src="/2022/05/07/Git-Introduction/branch-new-remote.png"></p>
+<p>完成后即可删除本地和远程的分支master</p>
+<h1 id="必要文件"><a href="#必要文件" class="headerlink" title="必要文件"></a>必要文件</h1><h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>此文件用于设定提交时忽略的文件，如.vs .idea等开发环境自动生成的文件</p>
+<p>可以直接前往<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">Github-Gitignore</a>下载到常用的配置文件并整合生成自己的配置文件</p>
+<h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>markdown文件，用于描述仓库的相关信息</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
+    <article
+  id="post-Comparison委托的使用（2022.5.3LeetCode每日一题）"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/04/Comparison%E5%A7%94%E6%89%98%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%882022.5.3LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%89/"
     >CSharp_Comparison_Delegate</a> 
 </h2>
  
@@ -191,7 +247,7 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/05/04/CSharp-Comparison-Delegate/" class="article-date">
+      <a href="/2022/05/04/Comparison%E5%A7%94%E6%89%98%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%882022.5.3LeetCode%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98%EF%BC%89/" class="article-date">
   <time datetime="2022-05-04T07:27:44.000Z" itemprop="datePublished">2022-05-04</time>
 </a>    
     </div>
@@ -261,6 +317,97 @@
 </article>
 
     
+    <article
+  id="post-CSharp-Comparison-Delegate"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2022/05/04/CSharp-Comparison-Delegate/"
+    >Comparison委托的使用（2022.5.3LeetCode每日一题）</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2022/05/04/CSharp-Comparison-Delegate/" class="article-date">
+  <time datetime="2022-05-04T07:27:44.000Z" itemprop="datePublished">2022-05-04</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="委托简介"><a href="#委托简介" class="headerlink" title="委托简介"></a>委托简介</h1><p>Comparison委托可以用于以特定规则排序集合</p>
+<h1 id="Comparison详解"><a href="#Comparison详解" class="headerlink" title="Comparison详解"></a>Comparison详解</h1><p>声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public delegate int Comparison&lt;T&gt;(T x, T y);</span><br></pre></td></tr></table></figure>
+
+<p>返回值</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; 0</td>
+<td>x &lt; y</td>
+</tr>
+<tr>
+<td>0</td>
+<td>x &#x3D; y</td>
+</tr>
+<tr>
+<td>&gt; 0</td>
+<td>x &gt; y</td>
+</tr>
+</tbody></table>
+<h1 id="每日一题"><a href="#每日一题" class="headerlink" title="每日一题"></a>每日一题</h1><blockquote>
+<p>给你一个日志数组 <code>logs</code>。每条日志都是以空格分隔的字串，其第一个字为字母与数字混合的 <strong>标识符</strong>。<br>如：”log1 123 456”</p>
+<p>有两种不同类型的日志：</p>
+<p><strong>字母日志</strong>：除标识符之外，所有字均由小写字母组成<br><strong>数字日志</strong>：除标识符之外，所有字均由数字组成<br>请按下述规则将日志重新排序：</p>
+<p>所有 <strong>字母日志</strong> 都排在 <strong>数字日志</strong> 之前。<br><strong>字母日志</strong> 在内容不同时，忽略标识符后，按内容字母顺序排序；在内容相同时，按标识符排序。<br><strong>数字日志</strong> 应该保留原来的相对顺序。<br>返回日志的最终顺序。</p>
+</blockquote>
+<p>思路：</p>
+<ol>
+<li>自定义一个类Pair用于存储字符串<code>Log</code>和原位置的序号<code>Index</code></li>
+<li>使用Comparison委托完成题干要求的比较规则<ol>
+<li>数字日志的相对大小保持，则保持相对位置：通过<code>Index</code>提供Comparison委托的返回值</li>
+<li>字母日志则是字典序排序</li>
+</ol>
+</li>
+</ol>
+<p>抄的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">public class Solution</span><br><span class="line">&#123;</span><br><span class="line">    public string[] ReorderLogFiles(string[] logs)</span><br><span class="line">    &#123;</span><br><span class="line">        // 自定义类进行重定向（需要同时使用到string和Indexer）</span><br><span class="line">        var pairs = new Pair[logs.Length];</span><br><span class="line"></span><br><span class="line">        for (int i = 0; i &lt; logs.Length; i++) pairs[i] = new Pair(logs[i], i);</span><br><span class="line"></span><br><span class="line">        // Sort方法配合Comparison实现题干要求的排序</span><br><span class="line">        Array.Sort(pairs, ((pair, pair1) =&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            // 定位到标识符后</span><br><span class="line">            var pos = pair.Str.IndexOf(&#x27; &#x27;) + 1;</span><br><span class="line">            var pos1 = pair1.Str.IndexOf(&#x27; &#x27;) + 1;</span><br><span class="line">            var isDigit = char.IsDigit(pair.Str[pos]);</span><br><span class="line">            var isDigit1 = char.IsDigit(pair1.Str[pos1]);</span><br><span class="line"></span><br><span class="line">            // 具体的排序</span><br><span class="line">            // 两个数字日志保持相对次序</span><br><span class="line">            // 必须使用Indexer计算相对位置，因为无法保证调用的排序算法的规则</span><br><span class="line">            // 如果是逆序搜索，将会导致无法保证数字日志仍是原顺序</span><br><span class="line">            if (isDigit &amp;&amp; isDigit1) return pair.Index - pair1.Index;</span><br><span class="line">            else if (isDigit || isDigit1) return isDigit ? 1 : -1;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                var subStr = pair.Str.Substring(pos);</span><br><span class="line">                var subStr1 = pair1.Str.Substring(pos1);</span><br><span class="line"></span><br><span class="line">                var compare = string.Compare(subStr, subStr1);</span><br><span class="line">                return compare == 0 ? string.Compare(pair.Str, pair1.Str) : compare;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;));</span><br><span class="line"></span><br><span class="line">        var res = new string[logs.Length];</span><br><span class="line">        for (int i = 0; i &lt; logs.Length; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            res[i] = pairs[i].Str;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private class Pair</span><br><span class="line">    &#123;</span><br><span class="line">        public string Str &#123; get; private set; &#125;</span><br><span class="line">        public int Index &#123; get; private set; &#125;</span><br><span class="line"></span><br><span class="line">        public Pair(string str, int index)</span><br><span class="line">        &#123;</span><br><span class="line">            Str = str;</span><br><span class="line">            Index = index;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+    
+</article>
+
+    
   </article>
   
 
@@ -274,7 +421,7 @@
       <li>
         Copyrights &copy;
         2022
-        <i class="ri-heart-fill heart_icon"></i> yu P
+        <i class="ri-heart-fill heart_icon"></i> John Doe
       </li>
     </ul>
     <ul>
@@ -287,9 +434,9 @@
         
         
         <span>
-  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></span>
   <span class="division">|</span>
-  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
 </span>
         
       </li>
@@ -324,7 +471,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Phantsia&#39;s Blog"></a>
+    <a href="/"><img src="/images/ayer-side.svg" alt="Hexo"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -355,7 +502,7 @@
   <ul class="nav">
     <li class="nav-item">
       
-      <a class="nav-item-link nav-item-search"  title="搜索">
+      <a class="nav-item-link nav-item-search"  title="Search">
         <i class="ri-search-line"></i>
       </a>
       
