@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Git配置笔记 |  Phantasia&#39;s Blog</title>
+      <title>Hexo使用笔记 |  Phantasia&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-Git-Introduction"
+  id="post-Hexo-Notes"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Git配置笔记
+  Hexo使用笔记
 </h1>
  
 
@@ -73,15 +73,15 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2022/05/07/Git-Introduction/" class="article-date">
-  <time datetime="2022-05-07T12:02:46.000Z" itemprop="datePublished">2022-05-07</time>
+      <a href="/2022/05/13/Hexo-Notes/" class="article-date">
+  <time datetime="2022-05-13T12:18:10.000Z" itemprop="datePublished">2022-05-13</time>
 </a>   
 <div class="word_count">
     <span class="post-time">
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">476</span>
+            <span class="post-count">299</span>
         </span>
     </span>
 
@@ -105,37 +105,44 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="创建远程仓库-Github"><a href="#创建远程仓库-Github" class="headerlink" title="创建远程仓库(Github)"></a>创建远程仓库(Github)</h1><p>GitHub中，找到右上角的加号，选择 <strong>New repository</strong> ，完成如下条目<br>1.	给仓库命名<br>2.	设置仓库说明（可选）<br>3.	选择访问权限<br>4.	添加README.md（可选）<br>5.	<code>.gitignore</code>的配置（可选）<br>6.	选择开源协议（小型项目可以忽略）</p>
-<p>完成以上的项目之后即可点击最下方的创建按钮完成创建</p>
-<h1 id="图形界面配置-VS2022"><a href="#图形界面配置-VS2022" class="headerlink" title="图形界面配置(VS2022)"></a>图形界面配置(VS2022)</h1><h2 id="配置Git-config"><a href="#配置Git-config" class="headerlink" title="配置Git-config"></a>配置Git-config</h2><p>在顶部菜单选择Git-Settings</p>
-<p><img src="/2022/05/07/Git-Introduction/homepage.png"></p>
-<p>在Visual Studio设置界面即可输入git配置信息<br><strong>注意：选择的条目是Git Global Settings</strong></p>
-<p><img src="/2022/05/07/Git-Introduction/settings.bmp"></p>
-<p>填写完成后可以生成SSH-key，这样就可以使用SSH协议访问远程仓库了</p>
-<p>首先前往目录<code>C://Users//User_Name//.ssh</code>查看是否拥有密钥</p>
-<p>如果没有，可以使用以下命令手动生成</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;&lt;Email-Address&gt;&quot;</span><br></pre></td></tr></table></figure>
+  <h1 id="Hexo配置笔记"><a href="#Hexo配置笔记" class="headerlink" title="Hexo配置笔记"></a>Hexo配置笔记</h1><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>选择本地工程的位置，打开Shell，初始化Hexo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd E://projects//Blog</span><br><span class="line">npx hexo init</span><br></pre></td></tr></table></figure>
 
-<p>前往目录<code>C://Users//User_Name//.ssh//id_rsa.pub</code>获取公钥</p>
-<p>前往远程仓库的用户设置，找到<code>SSH &amp; GPG Keys</code>条目</p>
-<p><img src="/2022/05/07/Git-Introduction/ssh.bmp"></p>
-<p>在<code>SSH Keys</code>里添加刚才找到的公钥</p>
-<p><img src="/2022/05/07/Git-Introduction/ssh-add.bmp"></p>
-<p>点击完成即可</p>
-<h2 id="创建本地仓库并建立连接"><a href="#创建本地仓库并建立连接" class="headerlink" title="创建本地仓库并建立连接"></a>创建本地仓库并建立连接</h2><p>选择顶部菜单中的Create Git Repository</p>
-<p><img src="/2022/05/07/Git-Introduction/create.bmp"></p>
-<p>填写完成后将会自动执行一次push</p>
-<p><strong>由于远程仓库主分支名称使用的是main而VS默认使用的是master，因此在初次上传后会有pull request的提示</strong></p>
-<p>进入分支管理</p>
-<p><img src="/2022/05/07/Git-Introduction/branch.png"></p>
-<p>重新创建分支引用远程仓库的main</p>
-<p><img src="/2022/05/07/Git-Introduction/branch-new.png"></p>
-<p>选择远程分支的main</p>
-<p><img src="/2022/05/07/Git-Introduction/branch-new-remote.png"></p>
-<p>完成后即可删除本地和远程的分支master</p>
-<h1 id="命令行配置"><a href="#命令行配置" class="headerlink" title="命令行配置"></a>命令行配置</h1><h1 id="必要文件"><a href="#必要文件" class="headerlink" title="必要文件"></a>必要文件</h1><h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>此文件用于设定提交时忽略的文件，如.vs .idea等开发环境自动生成的文件</p>
-<p>可以直接前往<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">Github-Gitignore</a>下载到常用的配置文件并整合生成自己的配置文件</p>
-<h2 id="README-md"><a href="#README-md" class="headerlink" title="README.md"></a>README.md</h2><p>markdown文件，用于描述仓库的相关信息</p>
+<h3 id="生成和发布"><a href="#生成和发布" class="headerlink" title="生成和发布"></a>生成和发布</h3><p>生成静态文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx hexo generate</span><br><span class="line">npx hexo g</span><br></pre></td></tr></table></figure>
+
+<p>本地服务器预览</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx hexo server</span><br><span class="line">npx hexo s</span><br></pre></td></tr></table></figure>
+
+<p>部署网站</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx hexo deploy</span><br><span class="line">npx hexo d</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建页面"><a href="#创建页面" class="headerlink" title="创建页面"></a>创建页面</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>可选的有page、post、draft</p>
+<p>之后就可以在新建的.md文件中书写文章内容啦</p>
+<p>如果创建的是draft，则需要publish才会显示成文章</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx hexo publish new post &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除文章"><a href="#删除文章" class="headerlink" title="删除文章"></a>删除文章</h3><p>删除文章的.md文件即可</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">del &lt;file-path&gt;</span><br></pre></td></tr></table></figure>
+
+<p>删除完成后重新发布即可</p>
+<h2 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h2><h3 id="更换主题-Powered-By-Oakland-Hexo如何更换主题、删除文章"><a href="#更换主题-Powered-By-Oakland-Hexo如何更换主题、删除文章" class="headerlink" title="更换主题 Powered By Oakland Hexo如何更换主题、删除文章"></a>更换主题 Powered By Oakland <a target="_blank" rel="noopener" href="http://oakland.github.io/2016/04/30/hexo-%E5%A6%82%E4%BD%95%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98%E3%80%81%E5%88%A0%E9%99%A4%E6%96%87%E7%AB%A0/">Hexo如何更换主题、删除文章</a></h3><p>下载主题：<br>以Ayer为例<a target="_blank" rel="noopener" href="https://github.com/Shen-Yu/hexo-theme-ayer">Ayer_Github</a></p>
+<p>按照README.md给出的说明进行安装</p>
+<p>拉取git</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="图片管理-hexo-renderer-marked"><a href="#图片管理-hexo-renderer-marked" class="headerlink" title="图片管理(hexo-renderer-marked)"></a>图片管理(hexo-renderer-marked)</h2><p><strong>注意：此方法无法在书写文章时显示，建议转换为图床</strong></p>
+<p>首先安装插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-marked --save</span><br></pre></td></tr></table></figure>
+
+<p>修改config文件</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># hexo-renderer-marked</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>插入图片时使用markdown语法即可，此时自动会将<code>![](image.jpg)</code>转换成<code>&lt;img src=“/2022/05/07/foo/image,jpg)</code></p>
  
       <!-- reward -->
       
@@ -200,12 +207,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://phantasiawo.github.io/2022/05/07/Git-Introduction/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://phantasiawo.github.io/2022/05/13/Hexo-Notes/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools-Git/" rel="tag">Tools, Git</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools-Hexo/" rel="tag">Tools, Hexo</a></li></ul>
 
     </footer>
   </div>
@@ -213,19 +220,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2022/05/13/Hexo-Notes/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Hexo使用笔记
-          
-        </div>
-      </a>
     
-    
-      <a href="/2022/05/04/CSharp-Comparison-Delegate/" class="article-nav-link">
+      <a href="/2022/05/07/Git-Introduction/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Comparison委托的使用（2022.5.3LeetCode每日一题）</div>
+        <div class="article-nav-title">Git配置笔记</div>
       </a>
     
   </nav>

@@ -6,7 +6,7 @@
   <link href="https://phantasiawo.github.io/atom.xml" rel="self"/>
   
   <link href="https://phantasiawo.github.io/"/>
-  <updated>2022-05-07T14:06:04.286Z</updated>
+  <updated>2022-05-13T12:19:15.561Z</updated>
   <id>https://phantasiawo.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo使用笔记</title>
+    <link href="https://phantasiawo.github.io/2022/05/13/Hexo-Notes/"/>
+    <id>https://phantasiawo.github.io/2022/05/13/Hexo-Notes/</id>
+    <published>2022-05-13T12:18:10.000Z</published>
+    <updated>2022-05-13T12:19:15.561Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Hexo配置笔记&quot;&gt;&lt;a href=&quot;#Hexo配置笔记&quot; class=&quot;headerlink&quot; title=&quot;Hexo配置笔记&quot;&gt;&lt;/a&gt;Hexo配置笔记&lt;/h1&gt;&lt;h2 id=&quot;使用&quot;&gt;&lt;a href=&quot;#使用&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Tools, Hexo" scheme="https://phantasiawo.github.io/tags/Tools-Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Git配置笔记</title>
     <link href="https://phantasiawo.github.io/2022/05/07/Git-Introduction/"/>
     <id>https://phantasiawo.github.io/2022/05/07/Git-Introduction/</id>
     <published>2022-05-07T12:02:46.000Z</published>
-    <updated>2022-05-07T14:06:04.286Z</updated>
+    <updated>2022-05-11T13:38:27.626Z</updated>
     
     
       
@@ -35,7 +58,7 @@
     
     
     
-    <category term="git" scheme="https://phantasiawo.github.io/tags/git/"/>
+    <category term="Tools, Git" scheme="https://phantasiawo.github.io/tags/Tools-Git/"/>
     
   </entry>
   
